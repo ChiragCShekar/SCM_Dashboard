@@ -14,7 +14,7 @@ st.set_page_config(page_title="📦 Delivery Visibility Dashboard", layout="wide
 # Load and cache data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("sample_orders_dataset.csv")
+    df = pd.read_csv("extended_sample_orders_dataset.csv")
     df["Date"] = pd.to_datetime(df["Date"])
     df["Status"] = df["Status"].str.strip().str.title()  # Normalize casing
     df["Product"] = df["Product"].str.strip().str.title()
